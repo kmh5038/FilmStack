@@ -47,8 +47,8 @@
 		0430CFCF2CC38E8000F9955A /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		0430CFD12CC38E8F00F9955A /* NumberFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+.swift"; sourceTree = "<group>"; };
 		0430CFD32CC38E9900F9955A /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
-		0430CFD52CC38F4500F9955A /* API.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = API.xcconfig; sourceTree = "<group>"; };
 		0430CFD62CC38F6700F9955A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0430CFD72CC3926600F9955A /* API.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = API.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 		0430CF8C2CC38C0800F9955A = {
 			isa = PBXGroup;
 			children = (
-				0430CFD52CC38F4500F9955A /* API.xcconfig */,
+				0430CFD72CC3926600F9955A /* API.xcconfig */,
 				0430CFAB2CC38C1200F9955A /* FilmStack */,
 				0430CF962CC38C0800F9955A /* Products */,
 			);
@@ -282,7 +282,6 @@
 /* Begin XCBuildConfiguration section */
 		0430CFA12CC38C0A00F9955A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0430CFD52CC38F4500F9955A /* API.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
