@@ -25,6 +25,7 @@
 		0430CFD02CC38E8000F9955A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFCF2CC38E8000F9955A /* String+.swift */; };
 		0430CFD22CC38E8F00F9955A /* NumberFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFD12CC38E8F00F9955A /* NumberFormatter+.swift */; };
 		0430CFD42CC38E9900F9955A /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFD32CC38E9900F9955A /* DateFormatter+.swift */; };
+		0430CFF52CC7710D00F9955A /* MovieSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFF42CC7710D00F9955A /* MovieSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		0430CFD32CC38E9900F9955A /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 		0430CFD62CC38F6700F9955A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0430CFD72CC3926600F9955A /* API.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = API.xcconfig; sourceTree = "<group>"; };
+		0430CFF42CC7710D00F9955A /* MovieSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				0430CFA92CC38C1200F9955A /* ContentView.swift */,
 				0430CFB62CC38C8900F9955A /* MovieOnPlayView */,
+				0430CFF62CC7711200F9955A /* MovieSearchView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,6 +188,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		0430CFF62CC7711200F9955A /* MovieSearchView */ = {
+			isa = PBXGroup;
+			children = (
+				0430CFF42CC7710D00F9955A /* MovieSearchView.swift */,
+			);
+			path = MovieSearchView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0430CFF52CC7710D00F9955A /* MovieSearchView.swift in Sources */,
 				0430CFD42CC38E9900F9955A /* DateFormatter+.swift in Sources */,
 				0430CFC02CC38DCA00F9955A /* MovieInfoModel.swift in Sources */,
 				0430CFAC2CC38C1200F9955A /* ContentView.swift in Sources */,
@@ -282,6 +294,7 @@
 /* Begin XCBuildConfiguration section */
 		0430CFA12CC38C0A00F9955A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0430CFD72CC3926600F9955A /* API.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
