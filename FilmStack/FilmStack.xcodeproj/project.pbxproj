@@ -26,6 +26,8 @@
 		0430CFD22CC38E8F00F9955A /* NumberFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFD12CC38E8F00F9955A /* NumberFormatter+.swift */; };
 		0430CFD42CC38E9900F9955A /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFD32CC38E9900F9955A /* DateFormatter+.swift */; };
 		0430CFF52CC7710D00F9955A /* MovieSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFF42CC7710D00F9955A /* MovieSearchView.swift */; };
+		0430D0112CC8F16700F9955A /* CustomTebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430D0102CC8F16700F9955A /* CustomTebView.swift */; };
+		0430D0142CC8F1AF00F9955A /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430D0132CC8F1AF00F9955A /* UserInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		0430CFD62CC38F6700F9955A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0430CFD72CC3926600F9955A /* API.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = API.xcconfig; sourceTree = "<group>"; };
 		0430CFF42CC7710D00F9955A /* MovieSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchView.swift; sourceTree = "<group>"; };
+		0430D0102CC8F16700F9955A /* CustomTebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTebView.swift; sourceTree = "<group>"; };
+		0430D0132CC8F1AF00F9955A /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +111,11 @@
 		0430CFB02CC38C1500F9955A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0430D0122CC8F17F00F9955A /* UserInfoView */,
 				0430CFA92CC38C1200F9955A /* ContentView.swift */,
 				0430CFB62CC38C8900F9955A /* MovieOnPlayView */,
 				0430CFF62CC7711200F9955A /* MovieSearchView */,
+				0430D0102CC8F16700F9955A /* CustomTebView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,6 +200,14 @@
 				0430CFF42CC7710D00F9955A /* MovieSearchView.swift */,
 			);
 			path = MovieSearchView;
+			sourceTree = "<group>";
+		};
+		0430D0122CC8F17F00F9955A /* UserInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				0430D0132CC8F1AF00F9955A /* UserInfoView.swift */,
+			);
+			path = UserInfoView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +300,8 @@
 				0430CFD22CC38E8F00F9955A /* NumberFormatter+.swift in Sources */,
 				0430CFD02CC38E8000F9955A /* String+.swift in Sources */,
 				0430CFCA2CC38E3100F9955A /* KOFICAPIClient.swift in Sources */,
+				0430D0142CC8F1AF00F9955A /* UserInfoView.swift in Sources */,
+				0430D0112CC8F16700F9955A /* CustomTebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

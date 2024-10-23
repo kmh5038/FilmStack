@@ -22,4 +22,4 @@ struct MovieOnPlayView: View {
         }
         
     }
-}
+} 

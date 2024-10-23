@@ -20,6 +20,7 @@ class KOFICAPIClient {
         let (data, _) = try await URLSession.shared.data(from: url)
         let movies = try JSONDecoder().decode(BoxOfficeResponse.self, from: data)
         
+        print("KOFIC API 응답: \(movies)")
         return movies.boxOfficeResult?.dailyBoxOfficeList ?? []
     }
     

@@ -17,6 +17,7 @@ class TMDBAPIClient {
     private func fetchMoviePosterURL(title: String) async throws -> URL? {
         let query = title.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let urlString = "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&query=\(query)&language=ko-KR"
+        print("TMDB API 호출: \(urlString)")
         guard let url = URL(string: urlString) else { throw URLError(.badURL) }
         
         let (data, _) = try await URLSession.shared.data(from: url)
@@ -30,6 +31,7 @@ class TMDBAPIClient {
     
     // Kofic에서 받아온 영화제목과 TMDB에서 검색한 영화제목이 여백차이로 일치하지않아 사용
     func searchPosterURL(title: String) async throws -> URL? {
+        print("포스터 검색 시작: \(title)")
         let searchTitles = [
             title,  // 원본 제목
             title.addingSpaceBeforeNumbers(),  // 숫자 앞에 공백 추가

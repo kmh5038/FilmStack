@@ -18,7 +18,9 @@ class MovieRepository {
     
     func fetchDailyBoxOfficeWithDetails(for date: String) async throws -> [MovieInfoModel] {
         let boxOfficeList = try await koficClient.fetchDailyBoxOfficeList(date: date)
+        print("일일 박스오피스 데이터 가져오기 시작: \(date)")
         
+        print("박스오피스 목록 가져옴, 상세 정보 가져오기 시작")
         return try await withThrowingTaskGroup(of: MovieInfoModel?.self) { group in
             for movie in boxOfficeList {
                 group.addTask {
@@ -45,6 +47,7 @@ class MovieRepository {
                 }
             }
             
+            print("모든 영화 정보 가져오기 완료, 총 \(detailedMovies.count)개")
             return detailedMovies.sorted { $0.boxOfficeInfo.rank ?? "" < $1.boxOfficeInfo.rank ?? "" }
         }
     }
