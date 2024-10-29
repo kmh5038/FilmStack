@@ -17,7 +17,6 @@ class TMDBAPIClient {
     private func fetchMoviePosterURL(title: String) async throws -> URL? {
         let query = title.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let urlString = "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&query=\(query)&language=ko-KR"
-        print("TMDB API 호출: \(urlString)")
         guard let url = URL(string: urlString) else { throw URLError(.badURL) }
         
         let (data, _) = try await URLSession.shared.data(from: url)

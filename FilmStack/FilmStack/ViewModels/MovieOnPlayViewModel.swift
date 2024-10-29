@@ -10,68 +10,33 @@ import SwiftUI
 
 class MovieOnPlayViewModel: ObservableObject {
     @Published var movies: [MovieInfoModel] = []
+    @Published var isLoading = false
     
-    private let koficClient: KOFICAPIClient
-    private let tmdbClient: TMDBAPIClient
+    private let repository: MovieRepository
+    private let cacheManager = MovieCacheManager.shared
     
     init(koficClient: KOFICAPIClient = KOFICAPIClient(apiKey: APIKeyManager.shared.koficApiKey),
          tmdbClient: TMDBAPIClient = TMDBAPIClient(apiKey: APIKeyManager.shared.tmdbApiKey)
     ) {
-        self.koficClient = koficClient
-        self.tmdbClient = tmdbClient
+        self.repository = MovieRepository(koficClient: koficClient, tmdbClient: tmdbClient)
     }
     
+    @MainActor
     func loadMovieInfo() async {
+        isLoading = true
+        print("\n===== 영화 데이터 로딩 시작 =====")
+        
         do {
             let yesterdayDate = DateFormatter.yesterdayString()
-            let boxOfficeMovies = try await koficClient.fetchDailyBoxOfficeList(date: yesterdayDate)
+            print("요청 날짜: \(yesterdayDate)")
             
-            let detailedMovies = await withTaskGroup(of: MovieInfoModel?.self) { group in
-                for movie in boxOfficeMovies {
-                    group.addTask {
-                        await self.fetchMovieDetails(for: movie)
-                    }
-                }
-                
-                var results: [MovieInfoModel] = []
-                for await detailedMovie in group {
-                    if let movie = detailedMovie {
-                        results.append(movie)
-                    }
-                }
-                return results
-            }
-            
-            await MainActor.run {
-                self.movies = detailedMovies.sorted {
-                    guard let rank1 = Int($0.boxOfficeInfo.rank ?? ""),
-                          let rank2 = Int($1.boxOfficeInfo.rank ?? "") else {
-                        return false
-                    }
-                    return rank1 < rank2
-                }
-            }
+            // repository를 통해 데이터 가져오기
+            movies = try await repository.fetchDailyBoxOfficeWithDetails(for: yesterdayDate)
         } catch {
-            await MainActor.run {
-                print("Error loading films: \(error)")
-                // 여기에 사용자에게 에러를 표시하는 로직을 추가할 수 있습니다.
-            }
+            print("Error loading films: \(error)")
+            // 에러 처리 로직 추가 가능
         }
-    }
-    
-    private func fetchMovieDetails(for movie: BoxOfficeMovieModel) async -> MovieInfoModel? {
-        do {
-            async let runtime = koficClient.fetchMovieRuntime(movieCd: movie.movieCd ?? "")
-            async let posterURL = tmdbClient.searchPosterURL(title: movie.movieNm ?? "")
-            
-            return MovieInfoModel(
-                boxOfficeInfo: movie,
-                runtime: try await runtime,
-                posterURL: try await posterURL
-            )
-        } catch {
-            print("Error fetching details for movie \(movie.movieNm ?? ""): \(error)")
-            return nil
-        }
+        
+        isLoading = false
     }
 }

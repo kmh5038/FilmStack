@@ -28,6 +28,7 @@
 		0430CFF52CC7710D00F9955A /* MovieSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFF42CC7710D00F9955A /* MovieSearchView.swift */; };
 		0430D0112CC8F16700F9955A /* CustomTebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430D0102CC8F16700F9955A /* CustomTebView.swift */; };
 		0430D0142CC8F1AF00F9955A /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430D0132CC8F1AF00F9955A /* UserInfoView.swift */; };
+		0430D0182CD0ADA200F9955A /* MovieCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430D0172CD0ADA200F9955A /* MovieCacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,10 +52,11 @@
 		0430CFD12CC38E8F00F9955A /* NumberFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+.swift"; sourceTree = "<group>"; };
 		0430CFD32CC38E9900F9955A /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 		0430CFD62CC38F6700F9955A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		0430CFD72CC3926600F9955A /* API.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = API.xcconfig; sourceTree = "<group>"; };
 		0430CFF42CC7710D00F9955A /* MovieSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchView.swift; sourceTree = "<group>"; };
 		0430D0102CC8F16700F9955A /* CustomTebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTebView.swift; sourceTree = "<group>"; };
 		0430D0132CC8F1AF00F9955A /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
+		0430D0152CD0AACB00F9955A /* API.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = API.xcconfig; sourceTree = "<group>"; };
+		0430D0172CD0ADA200F9955A /* MovieCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +73,7 @@
 		0430CF8C2CC38C0800F9955A = {
 			isa = PBXGroup;
 			children = (
-				0430CFD72CC3926600F9955A /* API.xcconfig */,
+				0430D0152CD0AACB00F9955A /* API.xcconfig */,
 				0430CFAB2CC38C1200F9955A /* FilmStack */,
 				0430CF962CC38C0800F9955A /* Products */,
 			);
@@ -142,6 +144,7 @@
 		0430CFB32CC38C2E00F9955A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0430D0162CD0AD7E00F9955A /* Cache */,
 				0430CFC62CC38E0D00F9955A /* API */,
 				0430CFC52CC38E0100F9955A /* Repository */,
 			);
@@ -208,6 +211,14 @@
 				0430D0132CC8F1AF00F9955A /* UserInfoView.swift */,
 			);
 			path = UserInfoView;
+			sourceTree = "<group>";
+		};
+		0430D0162CD0AD7E00F9955A /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				0430D0172CD0ADA200F9955A /* MovieCacheManager.swift */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 				0430CFC02CC38DCA00F9955A /* MovieInfoModel.swift in Sources */,
 				0430CFAC2CC38C1200F9955A /* ContentView.swift in Sources */,
 				0430CFBA2CC38D7700F9955A /* MovieListView.swift in Sources */,
+				0430D0182CD0ADA200F9955A /* MovieCacheManager.swift in Sources */,
 				0430CFBE2CC38DBC00F9955A /* BoxOfficeMovieModel.swift in Sources */,
 				0430CFB82CC38C9F00F9955A /* MovieOnPlayView.swift in Sources */,
 				0430CFAD2CC38C1200F9955A /* FilmStackApp.swift in Sources */,
@@ -310,7 +322,7 @@
 /* Begin XCBuildConfiguration section */
 		0430CFA12CC38C0A00F9955A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0430CFD72CC3926600F9955A /* API.xcconfig */;
+			baseConfigurationReference = 0430D0152CD0AACB00F9955A /* API.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
