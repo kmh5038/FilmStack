@@ -9,7 +9,12 @@ import SwiftUI
 
 struct CustomTabView: View {
     @Binding var selectedTab: Int
-    let tabs: [(image: String, title: String)]
+    
+    let tabs = [
+        (image: "popcorn", title: "상영중 영화"),
+        (image: "magnifyingglass", title: "필름 스택"),
+        (image: "person", title: "프로필")
+    ]
     
     var body: some View {
         VStack(spacing: 0) {
@@ -22,7 +27,7 @@ struct CustomTabView: View {
                     ForEach(0..<tabs.count, id: \.self) { index in
                         VStack(spacing: 4) {
                             Spacer()
-                                .frame(height: geometry.size.height * 0.3) // 상단 여백 10%
+                                .frame(height: geometry.size.height * 0.15) // 상단 여백 10%
                             
                             Image(systemName: tabs[index].image)
                                 .resizable()
@@ -33,7 +38,7 @@ struct CustomTabView: View {
                                 .font(.system(size: 10))
                             
                             Spacer()
-                                .frame(height: geometry.size.height * 0.15) // 하단 여백 15%
+                                .frame(height: geometry.size.height * 0.2) // 하단 여백 15%
                         }
                         .frame(width: geometry.size.width / CGFloat(tabs.count))
                         .foregroundColor(selectedTab == index ? .white : .gray)

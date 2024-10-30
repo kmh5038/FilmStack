@@ -25,10 +25,14 @@
 		0430CFD02CC38E8000F9955A /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFCF2CC38E8000F9955A /* String+.swift */; };
 		0430CFD22CC38E8F00F9955A /* NumberFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFD12CC38E8F00F9955A /* NumberFormatter+.swift */; };
 		0430CFD42CC38E9900F9955A /* DateFormatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFD32CC38E9900F9955A /* DateFormatter+.swift */; };
-		0430CFF52CC7710D00F9955A /* MovieSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFF42CC7710D00F9955A /* MovieSearchView.swift */; };
+		0430CFF52CC7710D00F9955A /* FlimStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430CFF42CC7710D00F9955A /* FlimStackView.swift */; };
 		0430D0112CC8F16700F9955A /* CustomTebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430D0102CC8F16700F9955A /* CustomTebView.swift */; };
 		0430D0142CC8F1AF00F9955A /* UserInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430D0132CC8F1AF00F9955A /* UserInfoView.swift */; };
 		0430D0182CD0ADA200F9955A /* MovieCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430D0172CD0ADA200F9955A /* MovieCacheManager.swift */; };
+		04991AF22CD1D67800194B12 /* MovieSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04991AF12CD1D67800194B12 /* MovieSearchView.swift */; };
+		04991AF52CD1F8A700194B12 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04991AF42CD1F8A700194B12 /* CustomSearchBar.swift */; };
+		04991AF72CD1FA9800194B12 /* MovieSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04991AF62CD1FA9800194B12 /* MovieSearchViewModel.swift */; };
+		04991AF92CD202E300194B12 /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04991AF82CD202E300194B12 /* View+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,11 +56,15 @@
 		0430CFD12CC38E8F00F9955A /* NumberFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+.swift"; sourceTree = "<group>"; };
 		0430CFD32CC38E9900F9955A /* DateFormatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+.swift"; sourceTree = "<group>"; };
 		0430CFD62CC38F6700F9955A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		0430CFF42CC7710D00F9955A /* MovieSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchView.swift; sourceTree = "<group>"; };
+		0430CFF42CC7710D00F9955A /* FlimStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlimStackView.swift; sourceTree = "<group>"; };
 		0430D0102CC8F16700F9955A /* CustomTebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTebView.swift; sourceTree = "<group>"; };
 		0430D0132CC8F1AF00F9955A /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
 		0430D0152CD0AACB00F9955A /* API.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = API.xcconfig; sourceTree = "<group>"; };
 		0430D0172CD0ADA200F9955A /* MovieCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCacheManager.swift; sourceTree = "<group>"; };
+		04991AF12CD1D67800194B12 /* MovieSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchView.swift; sourceTree = "<group>"; };
+		04991AF42CD1F8A700194B12 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
+		04991AF62CD1FA9800194B12 /* MovieSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchViewModel.swift; sourceTree = "<group>"; };
+		04991AF82CD202E300194B12 /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +121,11 @@
 		0430CFB02CC38C1500F9955A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0430D0122CC8F17F00F9955A /* UserInfoView */,
 				0430CFA92CC38C1200F9955A /* ContentView.swift */,
-				0430CFB62CC38C8900F9955A /* MovieOnPlayView */,
-				0430CFF62CC7711200F9955A /* MovieSearchView */,
 				0430D0102CC8F16700F9955A /* CustomTebView.swift */,
+				0430CFB62CC38C8900F9955A /* MovieOnPlayView */,
+				0430CFF62CC7711200F9955A /* FlimStackView */,
+				0430D0122CC8F17F00F9955A /* UserInfoView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				0430CFBB2CC38D9700F9955A /* MovieOnPlayViewModel.swift */,
+				04991AF62CD1FA9800194B12 /* MovieSearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -157,6 +166,7 @@
 				0430CFCF2CC38E8000F9955A /* String+.swift */,
 				0430CFD12CC38E8F00F9955A /* NumberFormatter+.swift */,
 				0430CFD32CC38E9900F9955A /* DateFormatter+.swift */,
+				04991AF82CD202E300194B12 /* View+.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -197,12 +207,14 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		0430CFF62CC7711200F9955A /* MovieSearchView */ = {
+		0430CFF62CC7711200F9955A /* FlimStackView */ = {
 			isa = PBXGroup;
 			children = (
-				0430CFF42CC7710D00F9955A /* MovieSearchView.swift */,
+				04991AF32CD1F88C00194B12 /* Component */,
+				0430CFF42CC7710D00F9955A /* FlimStackView.swift */,
+				04991AF12CD1D67800194B12 /* MovieSearchView.swift */,
 			);
-			path = MovieSearchView;
+			path = FlimStackView;
 			sourceTree = "<group>";
 		};
 		0430D0122CC8F17F00F9955A /* UserInfoView */ = {
@@ -219,6 +231,14 @@
 				0430D0172CD0ADA200F9955A /* MovieCacheManager.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		04991AF32CD1F88C00194B12 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				04991AF42CD1F8A700194B12 /* CustomSearchBar.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,26 +314,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0430CFF52CC7710D00F9955A /* MovieSearchView.swift in Sources */,
+				0430CFF52CC7710D00F9955A /* FlimStackView.swift in Sources */,
 				0430CFD42CC38E9900F9955A /* DateFormatter+.swift in Sources */,
 				0430CFC02CC38DCA00F9955A /* MovieInfoModel.swift in Sources */,
 				0430CFAC2CC38C1200F9955A /* ContentView.swift in Sources */,
+				04991AF92CD202E300194B12 /* View+.swift in Sources */,
 				0430CFBA2CC38D7700F9955A /* MovieListView.swift in Sources */,
 				0430D0182CD0ADA200F9955A /* MovieCacheManager.swift in Sources */,
 				0430CFBE2CC38DBC00F9955A /* BoxOfficeMovieModel.swift in Sources */,
 				0430CFB82CC38C9F00F9955A /* MovieOnPlayView.swift in Sources */,
 				0430CFAD2CC38C1200F9955A /* FilmStackApp.swift in Sources */,
+				04991AF52CD1F8A700194B12 /* CustomSearchBar.swift in Sources */,
 				0430CFC22CC38DE000F9955A /* TMDBModels.swift in Sources */,
 				0430CFBC2CC38D9700F9955A /* MovieOnPlayViewModel.swift in Sources */,
 				0430CFCE2CC38E6D00F9955A /* APIKeyManager.swift in Sources */,
 				0430CFC82CC38E1A00F9955A /* MovieRepository.swift in Sources */,
 				0430CFC42CC38DF000F9955A /* KOFICModels.swift in Sources */,
 				0430CFCC2CC38E4A00F9955A /* TMDBAPIClient.swift in Sources */,
+				04991AF22CD1D67800194B12 /* MovieSearchView.swift in Sources */,
 				0430CFD22CC38E8F00F9955A /* NumberFormatter+.swift in Sources */,
 				0430CFD02CC38E8000F9955A /* String+.swift in Sources */,
 				0430CFCA2CC38E3100F9955A /* KOFICAPIClient.swift in Sources */,
 				0430D0142CC8F1AF00F9955A /* UserInfoView.swift in Sources */,
 				0430D0112CC8F16700F9955A /* CustomTebView.swift in Sources */,
+				04991AF72CD1FA9800194B12 /* MovieSearchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

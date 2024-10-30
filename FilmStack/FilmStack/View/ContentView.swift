@@ -9,16 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var movieOnPlayViewModel = MovieOnPlayViewModel()
+    @StateObject private var movieSearchViewModel = MovieSearchViewModel()
     @State private var selectedTab = 0
     
-    let tabs = [
-            (image: "popcorn", title: "상영중 영화"),
-            (image: "magnifyingglass", title: "필름 스택"),
-            (image: "person", title: "프로필")
-        ]
-    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
                 Color.main.edgesIgnoringSafeArea(.all)
                 
@@ -30,7 +25,7 @@ struct ContentView: View {
                         MovieOnPlayView(viewModel: movieOnPlayViewModel)
                             .tag(0)
                         
-                        MovieSearchView()
+                        FlimStackView(viewModel: movieSearchViewModel)
                             .tag(1)
                         
                         UserInfoView()
@@ -38,34 +33,11 @@ struct ContentView: View {
                     }
                     .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
                     
-                    CustomTabView(selectedTab: $selectedTab, tabs: tabs)
+                    CustomTabView(selectedTab: $selectedTab)
                 }
             }
             .tint(.white)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Text(tabs[selectedTab].title)
-                        .foregroundStyle(.white)
-                        .font(.system(size: 20, weight: .bold, design: .rounded))
-                        .padding([.bottom, .leading], 10)
-                }
-                
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                        
-                    } label: {
-                        if selectedTab == 1 {
-                            Image(systemName: "plus")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                                .foregroundStyle(.white)
-                                .fontWeight(.semibold)
-                                .padding(.trailing, 10)
-                        }
-                    }
-                }
-            }
         }
         .onAppear {
             // 타이틀 영역
@@ -89,12 +61,10 @@ struct ContentView: View {
             
             UITabBar.appearance().standardAppearance = tabViewAppearance
             UITabBar.appearance().scrollEdgeAppearance = tabViewAppearance
-            
-            
         }
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}

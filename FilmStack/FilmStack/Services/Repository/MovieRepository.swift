@@ -10,12 +10,12 @@ import Foundation
 class MovieRepository {
     private let koficClient: KOFICAPIClient
     private let tmdbClient: TMDBAPIClient
-    private let cacheManager: MovieCacheManager // 선언
+    private let cacheManager: MovieCacheManager
     
     init(koficClient: KOFICAPIClient, tmdbClient: TMDBAPIClient) {
         self.koficClient = koficClient
         self.tmdbClient = tmdbClient
-        self.cacheManager = MovieCacheManager.shared // 초기화
+        self.cacheManager = MovieCacheManager.shared
     }
     
     func fetchDailyBoxOfficeWithDetails(for date: String) async throws -> [MovieInfoModel] {
@@ -56,7 +56,13 @@ class MovieRepository {
                 }
             }
             
-            return detailedMovies.sorted { $0.boxOfficeInfo.rank ?? "" < $1.boxOfficeInfo.rank ?? "" }
+            return detailedMovies.sorted {
+                guard let rank1 = Int($0.boxOfficeInfo.rank ?? ""),
+                      let rank2 = Int($1.boxOfficeInfo.rank ?? "") else {
+                    return false
+                }
+                return rank1 < rank2
+            }
         }
         
         // 새로운 데이터를 캐시에 저장
@@ -65,6 +71,17 @@ class MovieRepository {
         cacheManager.printCacheStatus()
         
         return movies
+    }
+    
+    func searchMovies(title: String) async throws -> [TMDBSearchResult] {
+        // 빈 검색어 체크
+        guard !title.isEmpty else {
+            return []
+        }
+        
+        let searchResults = try await tmdbClient.searchMovies(title: title)
+        
+        return searchResults
     }
 }
 

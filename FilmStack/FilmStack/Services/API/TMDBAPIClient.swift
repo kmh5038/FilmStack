@@ -17,6 +17,7 @@ class TMDBAPIClient {
     private func fetchMoviePosterURL(title: String) async throws -> URL? {
         let query = title.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         let urlString = "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&query=\(query)&language=ko-KR"
+        
         guard let url = URL(string: urlString) else { throw URLError(.badURL) }
         
         let (data, _) = try await URLSession.shared.data(from: url)
@@ -46,5 +47,20 @@ class TMDBAPIClient {
         }
         print("\(title) 포스터 못찾음")  // 디버깅용
         return nil
+    }
+    
+    func searchMovies(title: String) async throws -> [TMDBSearchResult] {
+        let query = title.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        let urlString = "https://api.themoviedb.org/3/search/movie?api_key=\(apiKey)&language=ko-KR&query=\(query)"
+        
+        guard let url = URL(string: urlString) else {
+            throw URLError(.badURL)
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let response = try JSONDecoder().decode(TMDBSearchResponse.self, from: data)
+        
+        print("TMDB 검색 결과: \(response.results.count)개 영화 찾음")
+        return response.results
     }
 }

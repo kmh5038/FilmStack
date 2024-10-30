@@ -15,6 +15,14 @@ struct MovieOnPlayView: View {
         VStack {
             MovieListView(movies: viewModel.movies)
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Text("상영중 영화")
+                    .foregroundStyle(.white)
+                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                    .padding([.bottom, .leading], 10)
+            }
+        }
         .onAppear {
             Task {
                 await viewModel.loadMovieInfo()
