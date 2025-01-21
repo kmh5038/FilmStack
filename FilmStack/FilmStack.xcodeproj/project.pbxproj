@@ -59,8 +59,8 @@
 		0430CFF42CC7710D00F9955A /* FlimStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlimStackView.swift; sourceTree = "<group>"; };
 		0430D0102CC8F16700F9955A /* CustomTebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTebView.swift; sourceTree = "<group>"; };
 		0430D0132CC8F1AF00F9955A /* UserInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoView.swift; sourceTree = "<group>"; };
-		0430D0152CD0AACB00F9955A /* API.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = API.xcconfig; sourceTree = "<group>"; };
 		0430D0172CD0ADA200F9955A /* MovieCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCacheManager.swift; sourceTree = "<group>"; };
+		045B3DBF2D4000F8004731E9 /* API.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = API.xcconfig; sourceTree = "<group>"; };
 		04991AF12CD1D67800194B12 /* MovieSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchView.swift; sourceTree = "<group>"; };
 		04991AF42CD1F8A700194B12 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		04991AF62CD1FA9800194B12 /* MovieSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchViewModel.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		0430CF8C2CC38C0800F9955A = {
 			isa = PBXGroup;
 			children = (
-				0430D0152CD0AACB00F9955A /* API.xcconfig */,
+				045B3DBF2D4000F8004731E9 /* API.xcconfig */,
 				0430CFAB2CC38C1200F9955A /* FilmStack */,
 				0430CF962CC38C0800F9955A /* Products */,
 			);
@@ -346,7 +346,6 @@
 /* Begin XCBuildConfiguration section */
 		0430CFA12CC38C0A00F9955A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0430D0152CD0AACB00F9955A /* API.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -466,6 +465,7 @@
 		};
 		0430CFA42CC38C0A00F9955A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 045B3DBF2D4000F8004731E9 /* API.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
